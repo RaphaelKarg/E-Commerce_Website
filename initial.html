@@ -1,0 +1,124 @@
+<!-- PHP CODE
+<?php
+    session_start();
+    if(!isset($_SESSION['email'])){
+        header("Location: login.php");
+    }
+    include_once "includes/unsetsessions.inc.php";
+?>
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style1.css" />
+        <link rel="icon" type="burgerICON/png" href="Images/burgerICON.png" />
+        <script src="Javascripts/time.js">
+        </script>
+        <title>Αρχική Σελίδα</title>
+    </head>
+    <body>
+        <!--Header Menu -->
+        <div id="topHeader">
+            <img src="Images/burgerICON.png" alt="Fast Food">
+            <h2>G-food</h2>
+            <ul>
+                <li><a href="initial.html">Καταστήματα</a></li>
+                <li><a href="aboutIn.html">Σχετικά με την σελίδα</a></li>
+                <li><a href="profile.html">Το προφίλ μου</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="logout.html">Αποσύνδεση</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="time-container">
+                <p id="DateToday"></p>
+                <p id="ShowClockToday"></p>
+            </div>
+        </div>
+        <!--Separator border -->
+        <div id="border">
+        </div>
+        <!--The current user -->
+        <!-- PHP CODE
+        <?php
+            echo "<h2 class='h2index'>Καλώς ήρθες " . $_SESSION['firstname'] . " " . $_SESSION['lastname'] . "!</h2>";
+        ?>
+        -->
+        <h1 class="h1index">Καταστήματα</h1>
+        <div id="main">
+            <!--
+            <div id="shops">
+                <ul>
+                    <li><a href="#">Ψητοπωλεία</a></li>
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">Βurger</a></li>
+                    <li><a href="#">Καφές</a></li>
+                    <li><a href="#">Γλυκά</a></li>
+                    <li><a href="#">Μαγειρευτά</a></li>
+                </ul>
+            </div>-->
+            <!-- Shops -->
+            <center><h3>Σύρρετε πάνω απ' τις εικόνες για να επιλέξετε το κατάστημά που επιθυμείτε.</h3></center>
+            <div class="image1">
+                <img class="image__img" src="Images/Souvlaki.jpg" alt="Souvlaki Image">
+                <a href="SouvlakiologyShop/menuorder.html">
+                    <div class="image__overlay image__overlay--blur">
+                        <div class="image__title">Σουβλακιology</div>
+                        <br />
+                        <p class="description">
+                            Η νοστιμιά είναι δικαίωμα...
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="image2">
+                <img class="image__img" src="Images/pizza.jpg" alt="Pizza Image">
+                <a href="#">
+                    <div class="image__overlay image__overlay--blur">
+                        <div class="image__title">PizzaTime</div>
+                        <br />
+                        <p class="description">
+                            LOREM IPSUM
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="image3">
+                <img class="image__img" src="Images/coffee.jpg" alt="Coffee Image">
+                <a href="#">
+                    <div class="image__overlay image__overlay--blur">
+                        <div class="image__title">myCoffee</div>
+                        <br />
+                        <p class="description">
+                            LOREM IPSUM
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- Empty place between footer and login form -->
+        <div id ="empty">
+        </div>
+        <!-- First footer container -->
+        <div id="footer">
+            <div id="subfooter1">
+                <h3>Ακολουθήστε μας στα κοινωνικά δίκτυα!</h3>
+            </div>
+            <!-- Second footer container -->
+            <div id="subfooter2">
+                <p class="text-container">
+                    Copyrights: Πανεπιστήμιο Δυτικής Μακεδονίας - Τμήμα Πληροφορικής &copy; <br />
+                    Πτυχιακή εργασία εφαρμογής E-food
+                </p>
+                <p class="image-container">
+                    <a href="#" ><img src="Images/facebookIcon.png" alt="Facebook Icon" /></a>
+                    <a href="#" ><img src="Images/instagramIcon.png" alt="instagram Icon" /></a>
+                    <a href="#" ><img src="Images/youtubeIcon.png" alt="Youtube Icon" /></a>
+                    <a href="#" ><img src="Images/twitterIcon.png" alt="Twitter Icon" /></a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

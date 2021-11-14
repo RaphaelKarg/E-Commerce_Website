@@ -1,14 +1,12 @@
 <!-- PHP CODE
-<?php
+ <?php
     session_start();
-    if(!isset($_SESSION['email'])){
-        header("Location: login.php");
+    if(isset($_SESSION['email'])){
+        header("Location: index.php");
     }
-    include_once "includes/unsetsessions.inc.php";
-?>
--->
+?>-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,13 +22,9 @@
             <img src="Images/burgerICON.png" alt="Fast Food">
             <h2>G-food</h2>
             <ul>
-                <li><a href="index.html">Καταστήματα</a></li>
-                <li><a href="aboutIn.html">Σχετικά με την σελίδα</a></li>
-                <li><a href="profile.html">Το προφίλ μου</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="logout.html">Αποσύνδεση</a></li>
-                    </ul>
-                </li>
+                <li><a href="index.html">Αρχική Σελίδα</a></li>
+                <li><a href="about.html">Σχετικά με την σελίδα</a></li>
+                <li><a href="contact.html">Επικοινωνία</a></li>
             </ul>
             <div class="time-container">
                 <p id="DateToday"></p>
@@ -40,62 +34,48 @@
         <!--Separator border -->
         <div id="border">
         </div>
-        <!--The current user -->
-        <!-- PHP CODE
-        <?php
-            echo "<h2 class='h2index'>Καλώς ήρθες " . $_SESSION['firstname'] . " " . $_SESSION['lastname'] . "!</h2>";
-        ?>
-        -->
-        <h1 class="h1index">Καταστήματα</h1>
-        <div id="main">
-            <!--
-            <div id="shops">
-                <ul>
-                    <li><a href="#">Ψητοπωλεία</a></li>
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">Βurger</a></li>
-                    <li><a href="#">Καφές</a></li>
-                    <li><a href="#">Γλυκά</a></li>
-                    <li><a href="#">Μαγειρευτά</a></li>
-                </ul>
-            </div>-->
-            <!-- Shops -->
-            <center><h3>Σύρρετε πάνω απ' τις εικόνες για να επιλέξετε το κατάστημά που επιθυμείτε.</h3></center>
-            <div class="image1">
-                <img class="image__img" src="Images/souvlaki.jpg" alt="Souvlaki Image">
-                <a href="SouvlakiologyShop/menuorder.html">
-                    <div class="image__overlay image__overlay--blur">
-                        <div class="image__title">Σουβλακιology</div>
-                        <br />
-                        <p class="description">
-                            Η νοστιμιά είναι δικαίωμα...
-                        </p>
+        <marquee scrollamount="15">
+            <h3 style="font-family: Lucida Sans Unicode">Φαγητό τώρα στο σπίτι σας, εύκολα και γρήγορα!</h3>
+        </marquee>
+        <h1>Αρχική Σελίδα</h1>
+        <!-- Login form -->
+        <div class="wrapper">
+            <div class="form-holder">
+                <img src="Images/userICON.png" alt="User Icon" class="logo" />
+                <h2>Συνδέσου τώρα!</h2>
+                <form action="index.html" method="POST" class="form"> <!-- login.inc.php -->
+                    <div class="form-group">
+                        <img src="Images/emailICON.png" alt="Email Icon" />
+                        <input type="text" name="emailOrPhone" placeholder="Email ή Τηλέφωνο" /> <!--Email Data Type: Text, Telephone Data Type: Text-->
                     </div>
-                </a>
-            </div>
-            <div class="image2">
-                <img class="image__img" src="Images/pizza.jpg" alt="Pizza Image">
-                <a href="#">
-                    <div class="image__overlay image__overlay--blur">
-                        <div class="image__title">PizzaTime</div>
-                        <br />
-                        <p class="description">
-                            LOREM IPSUM
-                        </p>
+                    <div class="form-group">
+                        <img src="Images/passwordICON.png" alt="Password Icon" />
+                        <input type="password" name="password" placeholder="Κωδικός Πρόσβασης" /><!--Password Data Type: Text-->
                     </div>
-                </a>
-            </div>
-            <div class="image3">
-                <img class="image__img" src="Images/coffee.jpg" alt="Coffee Image">
-                <a href="#">
-                    <div class="image__overlay image__overlay--blur">
-                        <div class="image__title">myCoffee</div>
-                        <br />
-                        <p class="description">
-                            LOREM IPSUM
-                        </p>
+                    <div class="form-group">
+                        <button type="submit" name="submit">ΣΥΝΔΕΣΗ</button>
                     </div>
-                </a>
+                    <div class="form-group">
+                        <a href="findpassword.php">Ξέχασα τον κωδικό</a>
+                        <a href="register.php" class="right-link">Εγγραφή τώρα!</a>
+                    </div>
+                </form>
+                <!-- PHP CODE
+                <?php
+                    if(isset($_GET['error'])){
+                        $error = $_GET['error'];
+                        if($error == "emptyfields"){
+                            echo "<center class='error'><p><b>Παρακαλούμε συμπληρώστε όλα τα πεδία.</b></p></center>";
+                        }
+                        else if($error == "wrongpwd"){
+                            echo "<center class='error'><p><b>Λάθος κωδικός πρόσβασης.</b></p></center>";
+                        }
+                        else if($error == "noUser"){
+                            echo "<center class='error'><p><b>Tο τηλέφωνό σας ή το E-mail σας δεν αντιστοιχεί με κάποιο λογαριασμό.<br /><a href='register.php'>Εγγραφτείτε εδώ για λογαριασμό.</a></b></p></center>";
+                        }
+                    }
+                ?>
+                -->
             </div>
         </div>
         <!-- Empty place between footer and login form -->
