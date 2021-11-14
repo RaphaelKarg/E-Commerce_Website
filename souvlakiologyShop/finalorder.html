@@ -1,0 +1,73 @@
+<!-- PHP CODE
+<?php
+    session_start();
+    if(!isset($_SESSION['email'])){
+        header("Location: login.php");
+    }
+?>
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style1.css" />
+        <link rel="icon" type="burgerICON/png" href="../Images/burgerICON.png" />
+        <script src="../Javascripts/time.js">
+        </script>
+        <script src="../Javascripts/alerts.js">
+        </script>
+        <title>Σουβλακιology</title>
+    </head>
+    <body>
+        <!--Header Menu -->
+        <div id="topHeader">
+            <img src="../Images/burgerICON.png" alt="Fast Food">
+            <h2>G-food</h2>
+            <ul>
+                <li><a href="../index.html">Καταστήματα</a></li>
+                <li><a href="../aboutIn.html">Σχετικά με την σελίδα</a></li>
+                <li><a href="../profile.html">Το προφίλ μου</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../logout.html">Αποσύνδεση</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="time-container">
+                <p id="DateToday"></p>
+                <p id="ShowClockToday"></p>
+            </div>
+        </div>
+        <!--Separator border -->
+        <div id="border">
+        </div>
+        <!-- Last Container -->
+        <div id="last-container">
+            <p>Η παραγγελία σας ολοκληρώθηκε.<br/>Θα βρίσκεται στον τόπο σας σύντομα.<br/>Για τυχόν προβλήματα επικοινωνήστε μαζί μας.</p>
+            <br />
+            <a href="../index.html">Πατήστε εδώ για να επιστρέψετε στην αρχική.</a>
+        </div>
+        <!-- Empty place between footer and login form -->
+        <div id ="empty">
+        </div>
+        <!-- First footer container -->
+        <div id="footer">
+            <div id="subfooter1">
+                <h3>Ακολουθήστε μας στα κοινωνικά δίκτυα!</h3>
+            </div>
+            <!-- Second footer container -->
+            <div id="subfooter2">
+                <p class="text-container">
+                    Copyrights: Πανεπιστήμιο Δυτικής Μακεδονίας - Τμήμα Πληροφορικής &copy; <br />
+                    Πτυχιακή εργασία εφαρμογής E-food
+                </p>
+                <p class="image-container">
+                    <a href="#" ><img src="../Images/facebookIcon.png" alt="Facebook Icon" /></a>
+                    <a href="#" ><img src="../Images/instagramIcon.png" alt="instagram Icon" /></a>
+                    <a href="#" ><img src="../Images/youtubeIcon.png" alt="Youtube Icon" /></a>
+                    <a href="#" ><img src="../Images/twitterIcon.png" alt="Twitter Icon" /></a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

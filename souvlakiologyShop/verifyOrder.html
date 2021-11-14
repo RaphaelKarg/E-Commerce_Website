@@ -1,0 +1,230 @@
+<!-- PHP CODE
+<?php
+    session_start();
+    if(!isset($_SESSION['email'])){
+        header("Location: ../login.php");
+    }
+    /**** User Information Session Variables ***/
+    $first = $_SESSION['firstname'];
+    $last = $_SESSION['lastname'];
+    $phone = $_SESSION['phone'];
+    $email = $_SESSION['email'];
+
+    $order = array();
+    /***** Appetizers *****/
+    if(isset($_SESSION['patates1'])){
+        array_push($order, $_SESSION['patates1']);
+    }
+    if(isset($_SESSION['patates2'])){
+        array_push($order, $_SESSION['patates2']);
+    }
+    if(isset($_SESSION['patates3'])){
+        array_push($order, $_SESSION['patates3']);
+    }
+    if(isset($_SESSION['tyrokroketes'])){
+        array_push($order, $_SESSION['tyrokroketes']);
+    }
+    if(isset($_SESSION['souvlakiM'])){
+        array_push($order, $_SESSION['souvlakiM']);
+    }
+    if(isset($_SESSION['psomi'])){
+        array_push($order, $_SESSION['psomi']);
+    }
+    /***** Meats *****/
+    if(isset($_SESSION['gyrosXoirinosSand'])){
+        array_push($order, $_SESSION['gyrosXoirinosSand']);
+    }
+    if(isset($_SESSION['gyrosKotopouloSand'])){
+        array_push($order, $_SESSION['gyrosKotopouloSand']);
+    }
+    if(isset($_SESSION['souvlakiXoirinoSand'])){
+        array_push($order, $_SESSION['souvlakiXoirinoSand']);
+    }
+    if(isset($_SESSION['souvlakiKotopouloSand'])){
+        array_push($order, $_SESSION['souvlakiKotopouloSand']);
+    }
+    if(isset($_SESSION['mpiftekiGemistoSand'])){
+        array_push($order, $_SESSION['mpiftekiGemistoSand']);
+    }
+    /****** Μερίδες ******/
+    if(isset($_SESSION['clubSnitselKotop'])){
+        array_push($order, $_SESSION['clubSnitselKotop']);
+    }
+    if(isset($_SESSION['souvlakiKotopouloMer'])){
+        array_push($order, $_SESSION['souvlakiKotopouloMer']);
+    }
+    if(isset($_SESSION['souvlakiXoirinoMer'])){
+        array_push($order, $_SESSION['souvlakiXoirinoMer']);
+    }
+    if(isset($_SESSION['gyroKotopouloMer'])){
+        array_push($order, $_SESSION['gyroKotopouloMer']);
+    }
+    if(isset($_SESSION['gyroXoirinoMer'])){
+        array_push($order, $_SESSION['gyroXoirinoMer']);
+    }
+    /***** Salads *****/
+    if(isset($_SESSION['Chef'])){
+        array_push($order, $_SESSION['Chef']);
+    }
+    if(isset($_SESSION['Ceasar'])){
+        array_push($order, $_SESSION['Ceasar']);
+    }
+    if(isset($_SESSION['Xoriatiki'])){
+        array_push($order, $_SESSION['Xoriatiki']);
+    }
+    if(isset($_SESSION['Green'])){
+        array_push($order, $_SESSION['Green']);
+    }
+    /***** Aloifes *****/
+    if(isset($_SESSION['Tzatziki'])){
+        array_push($order, $_SESSION['Tzatziki']);
+    }
+    if(isset($_SESSION['Tyrosalata'])){
+        array_push($order, $_SESSION['Tyrosalata']);
+    }
+    if(isset($_SESSION['Tyrokafteri'])){
+        array_push($order, $_SESSION['Tyrokafteri']);
+    }
+    if(isset($_SESSION['Melitzanosalata'])){
+        array_push($order, $_SESSION['Melitzanosalata']);
+    }
+    if(isset($_SESSION['Rosiki'])){
+        array_push($order, $_SESSION['Rosiki']);
+    }
+
+    $totalcost = 0;
+    /****** TOTAL COST SESSIONS ******/
+    if(!isset($_SESSION['totalcost1']))
+        $totalcost1 = 0;
+    else
+        $totalcost1 = $_SESSION['totalcost1'];
+
+    if(!isset($_SESSION['totalcost2']))
+        $totalcost2 = 0;
+    else
+        $totalcost2 = $_SESSION['totalcost2'];
+
+    if(!isset($_SESSION['totalcost3']))
+        $totalcost3 = 0;
+    else
+        $totalcost3 = $_SESSION['totalcost3'];
+
+    if(!isset($_SESSION['totalcost4']))
+        $totalcost4 = 0;
+    else
+        $totalcost4 = $_SESSION['totalcost4'];
+
+    $totalcost = $totalcost1 + $totalcost2 + $totalcost3 + $totalcost4;
+?>
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style1.css" />
+        <link rel="icon" type="burgerICON/png" href="../Images/burgerICON.png" />
+        <script src="../Javascripts/time.js">
+        </script>
+        <script src="../Javascripts/alerts.js">
+        </script>
+        <title>Σουβλακιology</title>
+    </head>
+    <body>
+        <!--Header Menu -->
+        <div id="topHeader">
+            <img src="../Images/burgerICON.png" alt="Fast Food">
+            <h2>G-food</h2>
+            <ul>
+                <li><a href="../index.html">Καταστήματα</a></li>
+                <li><a href="../aboutIn.html">Σχετικά με την σελίδα</a></li>
+                <li><a href="../profile.html">Το προφίλ μου</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../logout.html">Αποσύνδεση</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="time-container">
+                <p id="DateToday"></p>
+                <p id="ShowClockToday"></p>
+            </div>
+        </div>
+        <!--Separator border -->
+        <div id="border">
+        </div>
+        <!-- Verify Order -->
+        <h1>ΟΛΟΚΛΗΡΩΣΗ ΠΑΡΑΓΓΕΛΙΑΣ</h1>
+        <div id="verify-container">
+            <form action="finalorder.html" method="POST">
+                <table border="1" class="lastTable">
+                    <thead>
+                        <th>Στοιχεία Πελάτη:</th>
+                        <th>Στοιχεία Παραγγελίας:</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ονοματεπώνυμο: <!-- PHP CODE <?php echo $_POST['firstname'] . " " . $_POST['lastname']; ?> --></td>
+                            <td rowspan="6">
+                                <div id="arrayOrder">
+                                  <!-- PHP CODE
+                                    <?php
+                                        foreach($order as $value){
+                                            echo $value . "<br />";
+                                        }
+                                    ?> -->
+                                </div>
+                                <!-- PHP CODE<?php echo "<br /><p> Συνολικό κόστος: " . number_format($totalcost,2) . "&euro;" ?>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Τηλέφωνο Επικοινωνίας: <!-- PHP CODE<?php echo $_POST['phone']; ?>--></td>
+                        </tr>
+                        <tr>
+                            <td>Email: <!-- PHP CODE<?php echo $_POST['email']; ?>--></td>
+                        </tr>
+                        <tr>
+                            <td>Διεύθυνση Κατοικίας: <!-- PHP CODE<?php echo $_POST['streetAddress'] . " " . $_POST['city'] . " " . $_POST['postCode']; ?>--></td>
+                        </tr>
+                        <tr>
+                            <td>Όροφος: <!-- PHP CODE<?php echo $_POST['floor']; ?>--></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="finalComments">
+                                    <p style="padding-bottom: 10px;">Σχόλια:</p>
+                                    <textarea id="comments" name="finalcomments" placeholder="Σχόλια:"><!-- PHP CODE<?php echo $_POST['comments']; ?>--></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="form-groupLastMenuButton">
+                    <a href="menuorder.html">Πίσω</a>
+                    <button type="submit" onclick="finalAlert()">ΑΠΟΣΤΟΛΗ</button>
+                </div>
+            </form>
+        </div>
+        <!-- Empty place between footer and login form -->
+        <div id ="empty">
+        </div>
+        <!-- First footer container -->
+        <div id="footer">
+            <div id="subfooter1">
+                <h3>Ακολουθήστε μας στα κοινωνικά δίκτυα!</h3>
+            </div>
+            <!-- Second footer container -->
+            <div id="subfooter2">
+                <p class="text-container">
+                    Copyrights: Πανεπιστήμιο Δυτικής Μακεδονίας - Τμήμα Πληροφορικής &copy; <br />
+                    Πτυχιακή εργασία εφαρμογής E-food
+                </p>
+                <p class="image-container">
+                    <a href="#" ><img src="../Images/facebookIcon.png" alt="Facebook Icon" /></a>
+                    <a href="#" ><img src="../Images/instagramIcon.png" alt="instagram Icon" /></a>
+                    <a href="#" ><img src="../Images/youtubeIcon.png" alt="Youtube Icon" /></a>
+                    <a href="#" ><img src="../Images/twitterIcon.png" alt="Twitter Icon" /></a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

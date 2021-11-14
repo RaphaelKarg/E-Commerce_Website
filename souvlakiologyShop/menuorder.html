@@ -1,0 +1,322 @@
+<!-- PHP CODE
+<?php
+    session_start();
+    if(!isset($_SESSION['email'])){
+        header("Location: ../login.php");
+    }
+    /**** User Information Session Variables ***/
+    $first = $_SESSION['firstname'];
+    $last = $_SESSION['lastname'];
+    $phone = $_SESSION['phone'];
+    $email = $_SESSION['email'];
+?>
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style1.css" />
+        <link rel="icon" type="burgerICON/png" href="../Images/burgerICON.png" />
+        <script src="../Javascripts/time.js">
+        </script>
+        <title>Σουβλακιology</title>
+    </head>
+    <body>
+        <!--Header Menu -->
+        <div id="topHeader">
+            <img src="../Images/burgerICON.png" alt="Fast Food">
+            <h2>G-food</h2>
+            <ul>
+                <li><a href="../index.html">Καταστήματα</a></li>
+                <li><a href="../aboutIn.html">Σχετικά με την σελίδα</a></li>
+                <li><a href="../profile.html">Το προφίλ μου</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../logout.html">Αποσύνδεση</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="time-container">
+                <p id="DateToday"></p>
+                <p id="ShowClockToday"></p>
+            </div>
+        </div>
+        <!--Separator border -->
+        <div id="border">
+        </div>
+        <!-- Shop Menu -->
+        <h1 class="h1">Σουβλακιology Menu</h1>
+        <!-- Main Content Container -->
+        <div id="main-shop">
+            <!-- Left side bar Menu -->
+            <div id="left-menu">
+                <div class="a_link-final-order"><a href="menuorder.html" class="finalOrder">Επισκόπηση Παραγγελίας</a></div>
+                 <!-- Meat Photo of Menu -->
+                <div class="MenuImage firstImage">
+                    <img class="image__imgMenu" src="../Images/tiganites.jpg" alt="Fries Image" />
+                    <a href="orektika.html">
+                        <div class="image__overlayMenu image__overlay--blurMenu">
+                            <div class="image__titleMenu">Ορεκτικά</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Meat Photo of Menu -->
+                <div class="MenuImage">
+                    <img class="image__imgMenu" src="../Images/Souvlaki.jpg" alt="Meat Image" />
+                    <a href="kreata.html">
+                        <div class="image__overlayMenu image__overlay--blurMenu">
+                            <div class="image__titleMenu">Κρέατα</div>
+                            <br>
+                            <p>Σάντουιτς - Μερίδες</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Salad Photo of Menu -->
+                <div class="MenuImage">
+                    <img class="image__imgMenu" src="../Images/saladImage.jpg" alt="Salad Image" />
+                    <a href="salates.html">
+                        <div class="image__overlayMenu image__overlay--blurMenu">
+                            <div class="image__titleMenu">Σαλάτες</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Aloifes Photo of Menu -->
+                <div class="MenuImage lastImage">
+                    <img class="image__imgMenu" src="../Images/aloifesImage.jpg" alt="Meat Image" />
+                    <a href="aloifes.html">
+                        <div class="image__overlayMenu image__overlay--blurMenu">
+                            <div class="image__titleMenu">Αλοιφές</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Right side bar Menu -->
+            <div id="right-menu">
+                <center><h3>ΣΤΟΙΧΕΙΑ ΠΕΛΑΤΗ ΠΑΡΑΓΓΕΛΙΑΣ</h3></center>
+                <div class="form-container">
+                    <form action="verifyOrder.html" method="POST">
+                        <!-- First - Last Name -->
+                        <div class="form-groupMenu">
+                            <div class="text">Το ονομά σας*</div>
+                            <!-- PHP CODE<?php echo "--><input type='text' placeholder='Όνομα' value='$first' name='firstname' id='firstname'><!-- PHP CODE"; ?>-->
+                            <!-- PHP CODE<?php echo "--><input type='text' placeholder='Eπίθετο' value='$last' name='lastname' id='lastname'><!-- PHP CODE"; ?>-->
+                        </div>
+                       <!-- Phone -->
+                       <div class="form-groupMenu">
+                            <div class="text">Τηλέφωνο Επικοινωνίας*</div>
+                            <!-- PHP CODE<?php echo "--><input type='text' placeholder='Τηλέφωνο' value='$phone' name='phone' id='phone'><!-- PHP CODE"; ?>-->
+                        </div>
+                        <!-- Email -->
+                       <div class="form-groupMenu">
+                            <div class="text">Email*</div>
+                            <!-- PHP CODE<?php echo "--><input type='text' placeholder='Ηλεκτρονικό ταχυδρομείο' value='$email' name='email' id='email'><!-- PHP CODE"; ?>-->
+                        </div>
+                        <!-- Address -->
+                       <div class="form-groupMenu">
+                            <div class="text">Διεύθυνση Κατοικίας*</div>
+                            <input type="text" placeholder="Οδός / Νούμερο" name="streetAddress" id="streetAddress">
+                        </div>
+                        <div class="form-groupMenu">
+                            <div class="text"></div>
+                            <input type="text" placeholder="Πόλη" name="city" id="city">
+                            <input type="text" placeholder="ΤΚ" name="postCode" id="postCode">
+                        </div>
+                        <div class="form-groupMenu">
+                            <div class="text">Όροφος*</div>
+                            <input type="text" placeholder="π.χ 1ος" name="floor" id="floor">
+                        </div>
+                        <br />
+                        <hr/>
+                        <br />
+                        <div class="appetizer">
+                            <h4 class="h4Menu">ΟΡΕΚΤΙΚΑ</h4>
+                            <!-- PHP CODE
+                            <?php
+                                $appetizers = array();
+                                if(isset($_SESSION['patates1'])){
+                                    array_push($appetizers, $_SESSION['patates1']);
+                                }
+                                if(isset($_SESSION['patates2'])){
+                                    array_push($appetizers, $_SESSION['patates2']);
+                                }
+                                if(isset($_SESSION['patates3'])){
+                                    array_push($appetizers, $_SESSION['patates3']);
+                                }
+                                if(isset($_SESSION['tyrokroketes'])){
+                                    array_push($appetizers, $_SESSION['tyrokroketes']);
+                                }
+                                if(isset($_SESSION['souvlakiM'])){
+                                    array_push($appetizers, $_SESSION['souvlakiM']);
+                                }
+                                if(isset($_SESSION['psomi'])){
+                                    array_push($appetizers, $_SESSION['psomi']);
+                                }
+                                foreach ($appetizers as $value){
+                                   echo $value . "<br />";
+                                }
+                                if(isset($_SESSION['totalcost1'])){
+                                    echo "<br />Σύνολο: ";
+                                    $totalcost1=$_SESSION['totalcost1'];
+                                    echo number_format($totalcost1,2) . "&euro;";
+                                }
+                            ?>
+                            -->
+                        </div>
+                        <br />
+                        <hr/>
+                        <br />
+                        <div class="meats">
+                            <h4 class="h4Menu">ΚΡΕΑΤΑ<br />(Σάντουιτς - Μερίδες)</h4>
+                            <!-- PHP CODE
+                            <?php
+                                $meats = array();
+                                /****** Σάντουιτς ******/
+                                if(isset($_SESSION['gyrosXoirinosSand'])){
+                                    array_push($meats, $_SESSION['gyrosXoirinosSand']);
+                                }
+                                if(isset($_SESSION['gyrosKotopouloSand'])){
+                                    array_push($meats, $_SESSION['gyrosKotopouloSand']);
+                                }
+                                if(isset($_SESSION['souvlakiXoirinoSand'])){
+                                    array_push($meats, $_SESSION['souvlakiXoirinoSand']);
+                                }
+                                if(isset($_SESSION['souvlakiKotopouloSand'])){
+                                    array_push($meats, $_SESSION['souvlakiKotopouloSand']);
+                                }
+                                if(isset($_SESSION['mpiftekiGemistoSand'])){
+                                    array_push($meats, $_SESSION['mpiftekiGemistoSand']);
+                                }
+                                /****** Μερίδες ******/
+                                if(isset($_SESSION['clubSnitselKotop'])){
+                                    array_push($meats, $_SESSION['clubSnitselKotop']);
+                                }
+                                if(isset($_SESSION['souvlakiKotopouloMer'])){
+                                    array_push($meats, $_SESSION['souvlakiKotopouloMer']);
+                                }
+                                if(isset($_SESSION['souvlakiXoirinoMer'])){
+                                    array_push($meats, $_SESSION['souvlakiXoirinoMer']);
+                                }
+                                if(isset($_SESSION['gyroKotopouloMer'])){
+                                    array_push($meats, $_SESSION['gyroKotopouloMer']);
+                                }
+                                if(isset($_SESSION['gyroXoirinoMer'])){
+                                    array_push($meats, $_SESSION['gyroXoirinoMer']);
+                                }
+                                foreach ($meats as $value){
+                                   echo $value . "<br />";
+                                }
+                                if(isset($_SESSION['totalcost2'])){
+                                    echo "<br />Σύνολο: ";
+                                    $totalcost2=$_SESSION['totalcost2'];
+                                    echo number_format($totalcost2,2) . "&euro;";
+                                }
+                            ?>
+                            -->
+                        </div>
+                        <br />
+                        <hr/>
+                        <br />
+                        <div class="salads">
+                            <h4 class="h4Menu">ΣΑΛΑΤΕΣ</h4>
+                            <!-- PHP CODE
+                            <?php
+                                $salads = array();
+                                if(isset($_SESSION['Chef'])){
+                                    array_push($salads, $_SESSION['Chef']);
+                                }
+                                if(isset($_SESSION['Ceasar'])){
+                                    array_push($salads, $_SESSION['Ceasar']);
+                                }
+                                if(isset($_SESSION['Xoriatiki'])){
+                                    array_push($salads, $_SESSION['Xoriatiki']);
+                                }
+                                if(isset($_SESSION['Green'])){
+                                    array_push($salads, $_SESSION['Green']);
+                                }
+
+                                foreach ($salads as $value){
+                                   echo $value . "<br />";
+                                }
+                                if(isset($_SESSION['totalcost3'])){
+                                    echo "<br />Σύνολο: ";
+                                    $totalcost3=$_SESSION['totalcost3'];
+                                    echo number_format($totalcost3,2) . "&euro;";
+                                }
+                            ?>
+                            -->
+                        </div>
+                        <br />
+                        <hr/>
+                        <br />
+                        <div class="aloifes">
+                            <h4 class="h4Menu">ΑΛΟΙΦΕΣ</h4>
+                            <!-- PHP CODE
+                            <?php
+                                $aloifes = array();
+                                if(isset($_SESSION['Tzatziki'])){
+                                    array_push($aloifes, $_SESSION['Tzatziki']);
+                                }
+                                if(isset($_SESSION['Tyrosalata'])){
+                                    array_push($aloifes, $_SESSION['Tyrosalata']);
+                                }
+                                if(isset($_SESSION['Tyrokafteri'])){
+                                    array_push($aloifes, $_SESSION['Tyrokafteri']);
+                                }
+                                if(isset($_SESSION['Melitzanosalata'])){
+                                    array_push($aloifes, $_SESSION['Melitzanosalata']);
+                                }
+                                if(isset($_SESSION['Rosiki'])){
+                                    array_push($aloifes, $_SESSION['Rosiki']);
+                                }
+
+                                foreach ($aloifes as $value){
+                                   echo $value . "<br />";
+                                }
+                                if(isset($_SESSION['totalcost4'])){
+                                    echo "<br />Σύνολο: ";
+                                    $totalcost4=$_SESSION['totalcost4'];
+                                    echo number_format($totalcost4,2) . "&euro;";
+                                }
+                            ?>
+                            -->
+                        </div>
+                        <br />
+                        <hr/>
+                        <br />
+                        <div class="comments">
+                            <h4 class="h4Menu">Δώστε ένα σχόλιο...</h4>
+                            <textarea name="comments" id="comments" placeholder="Κάποιο σχόλιο;"></textarea>
+                        </div>
+                        <br />
+                        <hr/>
+                        <div class="form-groupMenuButton">
+                            <button type="submit" name="submit">ΑΠΟΣΤΟΛΗ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Empty place between footer and login form -->
+        <div id ="empty">
+        </div>
+        <!-- First footer container -->
+        <div id="footer">
+            <div id="subfooter1">
+                <h3>Ακολουθήστε μας στα κοινωνικά δίκτυα!</h3>
+            </div>
+            <!-- Second footer container -->
+            <div id="subfooter2">
+                <p class="text-container">
+                    Copyrights: Πανεπιστήμιο Δυτικής Μακεδονίας - Τμήμα Πληροφορικής &copy; <br />
+                    Πτυχιακή εργασία εφαρμογής E-food
+                </p>
+                <p class="image-container">
+                    <a href="#" ><img src="../Images/facebookIcon.png" alt="Facebook Icon" /></a>
+                    <a href="#" ><img src="../Images/instagramIcon.png" alt="instagram Icon" /></a>
+                    <a href="#" ><img src="../Images/youtubeIcon.png" alt="Youtube Icon" /></a>
+                    <a href="#" ><img src="../Images/twitterIcon.png" alt="Twitter Icon" /></a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

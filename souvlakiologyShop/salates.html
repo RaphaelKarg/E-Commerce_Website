@@ -1,0 +1,110 @@
+<!-- PHP CODE
+<?php
+    session_start();
+    if(!isset($_SESSION['email'])){
+        header("Location: ../login.php");
+    }
+?>
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style1.css" />
+        <link rel="icon" type="burgerICON/png" href="../Images/burgerICON.png" />
+        <script src="../Javascripts/time.js">
+        </script>
+        <title>Σουβλακιology</title>
+    </head>
+    <body>
+        <!--Header Menu -->
+        <div id="topHeader">
+            <img src="../Images/burgerICON.png" alt="Fast Food">
+            <h2>G-food</h2>
+            <ul>
+                <li><a href="../index.html">Καταστήματα</a></li>
+                <li><a href="../aboutIn.html">Σχετικά με την σελίδα</a></li>
+                <li><a href="../profile.html">Το προφίλ μου</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../logout.html">Αποσύνδεση</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="time-container">
+                <p id="DateToday"></p>
+                <p id="ShowClockToday"></p>
+            </div>
+        </div>
+        <!--Separator border -->
+        <div id="border">
+        </div>
+        <!-- Shop Menu -->
+        <h1 class="h1">Σουβλακιology Menu</h1>
+        <!-- Main Content Container -->
+        <div id="main-shop-container">
+            <h2 class="all">ΣΑΛΑΤΕΣ:</h2>
+            <br />
+            <hr/>
+            <br />
+            <form action="souvlakiology_includes/allFoods.inc.php" method="POST">
+                <div class="groupfoodAll">
+                    <label for="chef">
+                        Σεφ <br /><span class="description">(Σαλάτα με μαρούλι, ρόκα, ντοματίνια, γαλοπούλα, μπέικον, κρουτόν, αγγούρι, μοτσαρέλα, αυγό & σως Σουβλακιology)</span><br />
+                        5,50 &euro;
+                        <input type="checkbox" name="chef" id="chef" value="Σεφ">
+                    </label>
+                </div>
+                <div class="groupfoodAll">
+                    <label for="Caesar">
+                        Caesar`s <br /><span class="description">(Σαλάτα με μαρούλι, αγγούρι, κοτόπουλο, κεφαλοτύρι, καλαμπόκι, κρουτόν, παρμεζάνα & σως Caesar`s)</span><br />
+                        5,50 &euro;
+                    <input type="checkbox" name="caesar" id="Caesar" value="Caesar`s">
+                    </label>
+                </div>
+                <div class="groupfoodAll">
+                    <label for="xoriatiki">
+                        Χωριάτικη <br /><span class="description">(Σαλάτα με ντομάτα, αγγούρι, πιπεριές, ελιές, κρεμμύδι, φέτα, κάππαρη, κρουτόν, ρίγανη & ελαιόλαδο)</span><br />
+                        5,50 &euro;
+                        <input type="checkbox" name="xoriatiki" id="xoriatiki" value="Χωριάτικη">
+                    </label>
+                </div>
+                <div class="groupfoodAll">
+                    <label for="green">
+                        Green <br /><span class="description">(Σαλάτα με μαρούλι, ρόκα, αγγούρι, ντοματίνια, κουκουνάρι, κρουτόν & sauce vinaigrette μέλι & μουστάρδα)</span><br />
+                        3,80 &euro;
+                        <input type="checkbox" name="green" id="green" value="Green">
+                    </label>
+                </div>
+
+                <div class="groupfoodAllButton">
+                    <a href="menuorder.html">Πίσω</a>
+                    <button type="submit" name="submit3" class="left">Αποστολή</button>
+                    <button type="reset" name="reset" class="right">Καθαρισμός</button>
+                </div>
+            </form>
+        </div>
+        <!-- Empty place between footer and login form -->
+        <div id ="empty">
+        </div>
+        <!-- First footer container -->
+        <div id="footer">
+            <div id="subfooter1">
+                <h3>Ακολουθήστε μας στα κοινωνικά δίκτυα!</h3>
+            </div>
+            <!-- Second footer container -->
+            <div id="subfooter2">
+                <p class="text-container">
+                    Copyrights: Πανεπιστήμιο Δυτικής Μακεδονίας - Τμήμα Πληροφορικής &copy; <br />
+                    Πτυχιακή εργασία εφαρμογής E-food
+                </p>
+                <p class="image-container">
+                    <a href="#" ><img src="../Images/facebookIcon.png" alt="Facebook Icon" /></a>
+                    <a href="#" ><img src="../Images/instagramIcon.png" alt="instagram Icon" /></a>
+                    <a href="#" ><img src="../Images/youtubeIcon.png" alt="Youtube Icon" /></a>
+                    <a href="#" ><img src="../Images/twitterIcon.png" alt="Twitter Icon" /></a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
