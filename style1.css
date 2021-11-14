@@ -1,0 +1,1074 @@
+/*************** GENERIC ***************/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    position: relative;
+}
+
+body{
+    background-image: url("Images/BodyImage.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+/*************** index.html ***************/
+
+/**** Top Header Menu ****/
+marquee{
+    display: flex;
+    color: white;
+    padding-top: 1em;
+}
+h1{
+    color: white;
+    text-align: center;
+    margin-top: 2em;
+}
+#topHeader{
+    margin-left:auto;
+    margin-right:auto;
+    width: 80em;
+    height: 7em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#topHeader img{
+    width: 7em;
+    float: left;
+    margin-left: 100px;
+}
+#topHeader h2{
+    padding-top:2em;
+    color: white;
+    float: left;
+}
+#topHeader ul {
+    position: relative;
+    margin-left:15em;
+    margin-top:45px;
+    padding-top: 10px;
+    padding-bottom: 10px;;
+    height: 42px;
+    float: left;
+}
+#topHeader ul li{
+    float:left;
+    list-style-type: none;
+}
+#topHeader ul li a{
+    padding: 12px 24px;
+    text-decoration: none;
+    color: white;
+}
+#topHeader ul li a:hover{
+    border-bottom: 2px solid lightgray;
+}
+#topHeader ul li ul.dropdown-menu{
+    position:absolute;
+    display:none;
+    padding: 0px;
+    margin: 0;
+    top: 100%;
+    left: 70%;
+}
+#topHeader ul li:hover > ul.dropdown-menu{
+
+    padding-top: 12px;
+    display: block;
+}
+#topHeader .time-container{
+    max-width: auto;
+    max-height: auto;
+    float: right;
+    margin-top: 45px;
+    font-family: Times, Times New Roman, serif;
+    font-size: large;
+}
+/**** Border between header menu and basic content ****/
+
+#border{
+    margin-top: 1em;
+    width:100%;
+    height:2px;
+    background-color: white;
+    opacity: 0.3;
+}
+/**** Login Form ****/
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10em;
+    height: auto;
+}
+.form-holder{
+    background-color: rgb(15, 15, 15);
+    width:450px;
+    max-width: 90%;
+    opacity: .7;
+    border-radius: 10px;
+    padding: 10px;
+}
+.logo{
+    background-color: #222;
+    border-radius: 20px;;
+    display: block;
+    width: 100px;
+    margin: 0px auto;
+    padding: 10px;
+}
+.form-holder h2{
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    padding: 10px;
+}
+.form .form-group{
+    width: 100%;
+    padding: 10px;
+    margin: 0px auto;
+    position: relative;
+}
+.form-group input{
+    width: 100%;
+    background-color: #222;
+    outline: none;
+    border: none;
+    padding: 10px;
+    padding-left: 40px;
+    border-bottom: 2px solid #777;
+    color: white;
+    font-size: 15px;
+    -webkit-transition: 0.5s;
+}
+.form-group img{
+    position: absolute;
+    width: 26px;
+    top: 14px;
+    left: 15px;
+}
+/******first-input******/
+.form .form-group1{
+    width: 50%;
+    padding: 10px;
+    margin: 0px auto;
+    position: relative;
+    float: left;
+}
+.form-group1 input{
+    width: 100%;
+    background-color: #222;
+    outline: none;
+    border: none;
+    padding: 10px;
+    padding-left: 40px;
+    border-bottom: 2px solid #777;
+    color: white;
+    font-size: 15px;
+    -webkit-transition: 0.5s;
+}
+.form-group1 img{
+    position: absolute;
+    width: 26px;
+    top: 14px;
+    left: 15px;
+}
+.form-group1 input:focus{
+    background-color: #333;
+    border-color: orangered;
+}
+.form-group1 button:hover{
+    background-color: #333;
+    border-color: orangered;
+}
+/***********************/
+/******first2-input******/
+.form .form-group2{
+    width: 50%;
+    padding: 10px;
+    margin: 0px auto;
+    position: relative;
+    display: inline-block;
+}
+.form-group2 input{
+    width: 100%;
+    background-color: #222;
+    outline: none;
+    border: none;
+    padding: 10px;
+    padding-left: 40px;
+    border-bottom: 2px solid #777;
+    color: white;
+    font-size: 15px;
+    -webkit-transition: 0.5s;
+}
+.form-group2 img{
+    position: absolute;
+    width: 26px;
+    top: 14px;
+    left: 15px;
+}
+.form-group2 input:focus{
+    background-color: #333;
+    border-color: orangered;
+}
+.form-group2 button:hover{
+    background-color: #333;
+    border-color: orangered;
+}
+/***********************/
+.form-group button{
+    width: 100%;
+    padding: 10px;
+    padding-left: 0px;
+    background: transparent;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+    color: white;
+    border: 2px solid #777;
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+}
+.form-group input:focus{
+    background-color: #333;
+    border-color: orangered;
+}
+.form-group button:hover{
+    background-color: #333;
+    border-color: orangered;
+}
+.form-group a{
+    text-decoration: none;
+    color: rgb(231, 231, 231);
+    font-size: 14px;
+}
+.form-group .right-link{
+    float: right;
+}
+.form-group a:hover{
+    color: rgb(126, 126, 126);
+}
+#empty{
+    width: 100%;
+    height: 20em;
+}
+center.error{
+    color: red;
+}
+center.error a{
+    text-decoration: none;
+    color: white;
+}
+center.error a:hover{
+    color: tomato;
+}
+/**** Bottom first footer ****/
+#footer{
+    width: 100%;
+    padding: 2px;
+    position: static;
+    bottom: 0;
+    top: 100%;
+}
+#footer #subfooter1{
+    height: auto;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgb(37, 37, 37);
+    padding: 10px;
+    text-align: center;
+}
+/**** Bottom second footer ****/
+#footer #subfooter2{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    color: white;
+    background-color: rgb(53, 53, 53);
+}
+#subfooter2 .image-container{
+    width: 100%;
+}
+#subfooter2 .image-container img{
+    width: 2em;
+    height: 2em;
+    padding-top: 5px;
+}
+/*************** about.html ***************/
+h3{
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.wrapper-about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin-top: 10em;
+}
+.about-content{
+    background-color: rgb(15, 15, 15);
+    color: white;
+    padding: 15px;
+    opacity: 1;
+    width: 1000px;
+    max-width:100%;
+    box-shadow: 10px 10px 20px black;
+}
+h2.about{
+    margin-top: 0;
+    font-size: 33px;
+    text-align: center;
+    padding: 60px 0px 40px 0px;
+}
+.about-section p{
+    margin-top: 15px;
+}
+h2.between-about-profiles{
+    text-align: center;
+    padding: 50px 0px 25px 0px;
+}
+.profile-cards{
+    padding: 2.5em;
+    width: 100%;
+    height: auto;
+    font-family: "Ubuntu", sans-serif;
+}
+/***** Card 1 *****/
+.card1{
+    width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card1 a{
+    text-decoration: none;
+}
+/***** Card 2 *****/
+.card2{
+    width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    float: right;
+}
+.card2 a{
+    text-decoration: none;
+}
+/*****GENERIC IN CARDS*****/
+.card-header{
+    background: #2c3a47;
+    padding: 40px 40px;
+}
+.pic{
+    display: inline-block;
+    padding: 5px;
+    background: linear-gradient(130deg, #74b9ff, #e66767);
+    margin: auto;
+    border-radius: 50%;
+}
+.pic img{
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.name{
+    color: #f2f2f2;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.desc{
+    padding: 30px 0px 20px 0px;
+    font-size: 16px;
+    color: #e66767;
+}
+.sm{
+    display:flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.sm a{
+    color: #f2f2f2;
+    width: 56px;
+    font-size: 22px;
+    transition: .3s linear;
+}
+.sm a:hover{
+    color: #e66767;
+}
+.contact-btn{
+    display: inline-block;
+    padding: 12px 58px;
+    color: #e66767;
+    border: 2px solid #e66767;
+    border-radius: 6px;
+    margin-top: 16px;
+    transition: .3s linear;
+}
+.contact-btn:hover{
+    background: #e66767;
+    color: #f2f2f2;
+}
+.card-footer{
+    background: #f4f4f4;
+    padding: 30px 10px;
+    color: #2c3a47;
+    font-size: 20px;
+}
+/*************** contact.html ***************/
+.wrapper-contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10em;
+    height: auto;
+}
+.form-holder-contact{
+    background-color: rgb(15, 15, 15);
+    width: 450px;
+    max-width: 90%;
+    opacity: .8;
+    padding: 10px;
+    padding-bottom: 5px;
+}
+.form-holder-contact .hcontact{
+    color: white;
+    text-align: center;
+    padding-bottom: 1em;
+    margin-top: 0.7em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid gray;
+}
+.formContact .form-group-contact{
+    width: 90%;
+    padding: 10px;
+    margin: 0px auto;
+    position: relative;
+}
+.form-group-contact input{
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #777;
+    padding: 10px;
+    padding-left: 40px;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(26, 26, 26);
+    -webkit-transition: 0.5s;
+}
+.form-group-contact img{
+    position: absolute;
+    width: 26px;
+    top: 14px;
+    left: 15px;
+}
+.form-group-contact input:focus{
+    background-color: #333;
+    border-color: orangered;
+    -webkit-transition: 0.5s;
+}
+.form-group-contact option{
+    color: rgb(122, 122, 122);
+    outline: none;
+    border: none;
+}
+.form-group-contact textarea{
+    width: 100%;
+    height: 7em;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background: transparent;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    font-size: 15px;
+    resize: none;
+    border-bottom: 2px solid #777;
+}
+.form-group-contact textarea:focus{
+    background-color: #333;
+    -webkit-transition: 0.5s;
+    border-bottom: 2px solid orangered;
+}
+.form-group-contact button{
+    padding: 10px;
+    color: white;
+    background: transparent;
+    background-color: rgb(26, 26, 26);
+    border: none;
+    outline: none;
+    font-size: 15px;
+    -webkit-transition: 0.5s;
+}
+.form-group-contact .right-button{
+    float: right;
+}
+.form-group-contact button:hover{
+    cursor: pointer;
+    background-color: #333;
+}
+center.successMessageContact{
+    margin-top: 10px;
+    color: green;
+    margin-bottom: 5px;
+}
+/********************* register.php *********************/
+
+.form-password-contains{
+    width: auto;
+    padding: 10px;
+    margin: 0px 10px 0px 10px;
+    color: white;
+}
+.form-password-contains ul{
+    margin: 0px 25px 0px 25px;
+}
+center.successMessageReg{
+    color: green;
+}
+center.faildMessageReg{
+    color: red;
+}
+/********************* index.php *********************/
+h2.h2index{
+    margin-top: 25px;
+    color: white;
+    text-align: center;
+}
+h1.h1index{
+    color:white;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+#main{
+    padding: 15px;
+    width: 1400px;
+    height: 420px;
+    margin-left:auto;
+    margin-right: auto;
+    background-color: rgb(15, 15, 15);
+    box-shadow: 10px 10px 20px black;
+}
+/*#shops{
+    width: 100%;
+    height: auto;
+    list-style-type: none;
+}
+#shops ul{
+    margin-top: 20px;
+    margin-left: 250px;
+    float: left;
+}
+#shops ul li{
+    margin-top: 10px;
+    float: left;
+    list-style-type: none;
+}
+#shops ul li a{
+    padding: 30px;
+    color: white;
+    text-decoration: none;
+}
+#shops ul li a:hover{
+    background-color: grey;
+}*/
+.image1{
+    float: left;
+    margin-top: 25px;
+    margin-left: 45px;;
+    position: relative;
+    width: 400px;
+}
+.image2{
+    float: left;
+    margin-top: 25px;
+    margin-left: 45px;
+    position: relative;
+    width: 400px;
+}
+.image3{
+    float: left;
+    margin-top: 25px;
+    margin-left: 45px;
+    position: relative;
+    width: 400px;
+}
+.image__img{
+    display:block;
+    width: 100%;
+}
+.image__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+.image__overlay--blur{
+    backdrop-filter: blur(5px);
+}
+.image__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+.image__overlay:hover{
+    opacity: 1;
+}
+.image__overlay:hover > * {
+    transform: translateY(0);
+}
+.image__title{
+    font-size: 2em;
+    font-weight: 500;
+}
+.image__description{
+    font-size: 1.25em;
+    margin-top: 0.25em;
+}
+
+/********** logout.php **********/
+#logout-container{
+    background-color: rgb(15, 15, 15);
+    width: 600px;
+    height: 400px;
+    padding: 25px;
+    margin-top: 10em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #2c3a47;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px black;
+}
+.logout-header-description{
+    color: white;
+    padding-top: 20px;
+    font-size: 20px;
+}
+.logout-bottom-description{
+    color: white;
+    padding-top: 5em;
+}
+.logoutform{
+    float: right;
+}
+.logoutform button{
+    margin-top: 80%;
+    margin-left: 10px;
+    padding: 10px;
+    color: white;
+    border: none;
+    outline: none;
+    background: transparent;
+    -webkit-transition: 0.5s;
+    cursor: pointer;
+}
+.logoutform button:hover{
+    background-color: gray;
+}
+
+/********** menuorder.php **********/
+#main-shop{
+    background-color: rgb(15, 15, 15);
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding:10px 10px 5px 10px;
+    width:1300px;
+    height: 878px;
+    box-shadow: 10px 10px 20px black;
+}
+#left-menu{
+    float: left;
+    width: 25%;
+    height:auto;
+    border-right: 1px solid white;
+}
+#right-menu{
+    float: right;
+    width: 75%;
+    max-height:860px;
+    overflow-y: scroll;
+}
+/* width FROM W3SCHOOLS*/
+#right-menu::-webkit-scrollbar {
+    width: 10px;
+}
+
+  /* Track FROM W3SCHOOLS*/
+#right-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+  /* Handle FROM W3SCHOOLS*/
+#right-menu::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+  /* Handle on hover FROM W3SCHOOLS*/
+#right-menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+div.a_link-final-order{
+    margin-top: 10px;
+}
+a.finalOrder{
+    padding: 10px 58px 10px 57px;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: 0.5s;
+    background: transparent;
+    text-decoration: none;
+    color: white;
+}
+a.finalOrder:hover{
+    background-color: #2c3a47;
+}
+.MenuImage{
+    position: relative;
+    width: 300px;
+    margin-bottom: 10px;
+}
+.firstImage{
+    margin-top: 20px;
+}
+.lastImage{
+    margin-bottom: 0;
+}
+.image__imgMenu{
+    display:block;
+    width: 100%;
+}
+
+.image__overlayMenu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay--blurMenu{
+    backdrop-filter: blur(5px);
+}
+.image__overlayMenu > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+.image__overlayMenu:hover{
+    opacity: 1;
+}
+.image__overlayMenu:hover > * {
+    transform: translateY(0);
+}
+
+.image__titleMenu{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.form-container{
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+
+}
+h4.h4Menu{
+    width: 200px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+}
+.form-groupMenu{
+    width: 100%;
+    height: 45px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+div.text{
+    padding-top: 10px;
+    float: left;
+    width: 250px;
+    height: 100%;
+}
+div.form-groupMenu input{
+    width: 35%;
+    padding: 13px 0px 13px 10px;
+    outline: none;
+    font-size: 15px;
+    -webkit-transition: 0.5s;
+}
+div.form-groupMenu input:focus{
+    border-radius: 5px;
+    border: 3px solid lightseagreen;
+}
+.form-groupMenuButton{
+    width: 100%;
+    text-align: center;
+    padding-top: 1.5em;
+}
+.form-groupMenuButton button{
+    padding: 15px 50px 15px 50px;
+    background: transparent;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    -webkit-transition: 0.5s;
+    border: 2px solid #777;
+    cursor: pointer;
+}
+.form-groupMenuButton button:hover{
+    background-color: #333;
+    border-color:orangered;
+}
+span.border{
+    border: 1px solid white;
+    height: 2px;
+    width: 200px;
+}
+/********** orektika.php **********/
+#main-shop-container{
+    background-color: rgb(15, 15, 15);
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding:20px;
+    width:700px;
+    height: auto;
+    box-shadow: 10px 10px 20px black;
+}
+h2.all{
+    color: white;
+    text-align: center;
+}
+div.groupfoodAll{
+    width: 500px;
+    margin-left: 5em;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 20px;
+}
+div.groupfoodAll label:hover{
+    cursor: pointer;
+}
+span.description{
+    font-size: small;
+}
+div.groupfoodAllButton{
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+div.groupfoodAllButton a{
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    float: left;
+}
+div.groupfoodAllButton a:hover{
+    color: gray;
+}
+
+div.groupfoodAllButton button{
+    padding: 10px 25px 10px 25px;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    -webkit-transition: 0.5s;
+    cursor: pointer;
+}
+div.groupfoodAllButton button:hover{
+    background-color: rgb(129, 129, 129);
+}
+div.comments textarea{
+    width: 50%;
+    height: 10em;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background: transparent;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    font-size: 15px;
+    resize: none;
+    border-bottom: 2px solid #777;
+}
+div.comments textarea:focus{
+    background-color: #333;
+    -webkit-transition: 0.5s;
+    border-bottom: 2px solid orangered;
+}
+/***** kreata.php *****/
+h2.kreatamenu{
+    width: 150px;
+    margin-left: 4.1em;
+    margin-bottom: 10px;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+/***** verifyOrder.php *****/
+
+#verify-container{
+    width: 1200px;
+    background-color: rgb(15, 15, 15);
+    box-shadow: 10px 10px 20px black;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    padding: 15px;
+}
+.lastTable{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+.lastTable th{
+    text-align: left;
+    padding: 15px;
+}
+.lastTable td{
+    padding: 15px;
+}
+/* width FROM W3SCHOOLS*/
+#arrayOrder::-webkit-scrollbar {
+    width: 10px;
+}
+
+  /* Track FROM W3SCHOOLS*/
+#arrayOrder::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+  /* Handle FROM W3SCHOOLS*/
+#arrayOrder::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+  /* Handle on hover FROM W3SCHOOLS*/
+#arrayOrder::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+#finalComments textarea{
+    width: 100%;
+    height: 10em;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background: transparent;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    font-size: 15px;
+    resize: none;
+    border-bottom: 2px solid #777;
+}
+#finalComments textarea:focus{
+    background-color: #333;
+    -webkit-transition: 0.5s;
+    border-bottom: 2px solid orangered;
+}
+div.form-groupLastMenuButton{
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+div.form-groupLastMenuButton button{
+    padding: 15px 50px 15px 50px;
+    background: transparent;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    -webkit-transition: 0.5s;
+    border: 2px solid #777;
+    cursor: pointer;
+}
+div.form-groupLastMenuButton button:hover{
+    background-color: #333;
+    border-color:orangered;
+}
+div.form-groupLastMenuButton a{
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+    float: left;
+    text-decoration: none;
+}
+div.form-groupLastMenuButton a:hover{
+    color: gray;
+}
+/***** finalOrder.php *****/
+#last-container{
+    width: 800px;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    background-color: rgb(15, 15, 15);
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 50px;
+    color: white;
+    font-size: 20px;
+}
+#last-container a{
+    padding: 10px 25px 10px 25px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#last-container a:hover{
+    color: gray;
+}

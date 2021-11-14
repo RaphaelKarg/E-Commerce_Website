@@ -1,0 +1,159 @@
+<!-- PHP CODE
+﻿<?php
+    session_start();
+    if(isset($_SESSION['email'])){
+        header("Location: index.php");
+    }
+?>
+-->
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style1.css" />
+    <link rel="icon" type="burgerICON/png" href="Images/burgerICON.png" />
+    <script src="Javascripts/control_inputs_Register.js">
+    </script>
+    <script src="Javascripts/time.js">
+    </script>
+    <title>Εγγραφή</title>
+</head>
+    <body>
+        <!--Header Menu -->
+        <div id="topHeader">
+            <img src="Images/burgerICON.png" alt="Fast Food">
+            <h2>G-food</h2>
+            <ul>
+                <li><a href="login.html">Αρχική Σελίδα</a></li>
+                <li><a href="about.html">Σχετικά με την σελίδα</a></li>
+                <li><a href="contact.html">Επικοινωνία</a></li>
+            </ul>
+            <div class="time-container">
+                <p id="DateToday"></p>
+                <p id="ShowClockToday"></p>
+            </div>
+        </div>
+        <!--Separator border -->
+        <div id="border">
+        </div>
+        <h1>Εγγραφή</h1>
+        <!-- Login form -->
+        <div class="wrapper">
+            <div class="form-holder">
+                <h2>Κάνε εγγραφή για να μαθαίνεις τα νέα μας!</h2>
+                <form action="Includes/signup.inc.html" method="POST" class="form" onsubmit="return FormVal()">
+                    <!--First and Second texts inputs for Name and Lastname-->
+                    <div class="first-and-two-container">
+                        <div class="form-group1">
+                            <img src="Images/userICON.png" alt="User Icon" />
+                            <input type="text" placeholder="Όνομα"  id="name" name="name" onblur="ValName()" /><!--Name-->
+                            <!-- PHP CODE
+                            <?php
+                                if(isset($_GET['first'])){
+                                    $first = $_GET['first'];
+                                    echo '<input type="text" placeholder="Όνομα"  id="name" name="name" value=' . $first . ' onblur="ValName()" />';
+                                }
+                                else{
+                                    echo '<input type="text" placeholder="Όνομα"  id="name" name="name" onblur="ValName()" />';
+                                }
+                            ?>
+                            -->
+                        </div>
+                        <div class="form-group2">
+                            <img src="Images/userICON.png" alt="User Icon" />
+                            <input type="text" placeholder="Επώνυμο" id="surname" name="surname" onblur="ValSurname()" />  <!--Surname-->
+                            <!-- PHP CODE
+                            <?php
+                                if(isset($_GET['last'])){
+                                    $last = $_GET['last'];
+                                    echo '<input type="text" placeholder="Επώνυμο" id="surname" name="surname" value=' . $last . ' onblur="ValSurname()" />';
+                                }
+                                else{
+                                    echo '<input type="text" placeholder="Επώνυμο" id="surname" name="surname" onblur="ValSurname()" />';
+                                }
+                            ?>
+                            -->
+                        </div>
+                    </div>
+                    <!--Other text inputs -->
+                    <div class="form-group">
+                        <img src="Images/telephoneICON.png" alt="Telephone Icon" />
+                        <input type="text" placeholder="Κινητό Τηλέφωνο" id="phone" name="phone" onblur="ValPhone()" /> <!--Phone-->
+                    </div>
+                    <div class="form-group">
+                        <img src="Images/emailICON.png" alt="Email Icon" />
+                        <input type="email" placeholder="E-mail" id="mail" name="mail" onblur="ValMail()" > <!--Email-->
+                    </div>
+                    <div class="form-group">
+                        <img src="Images/passwordICON.png" alt="Password Icon" />
+                        <input type="password" placeholder="Κωδικός πρόσβασης" id="pass" name="pass" onblur="ValPass()" /><span id="spass"></span> <!--Password-->
+                    </div>
+                    <!--Other text inputs -->
+                    <div class="form-group">
+                        <img src="Images/passwordICON.png" alt="Password Icon" />
+                        <input type="password" placeholder="Επιβεβαίωση κωδικού πρόσβασης" id="rpass" name="rpass" onblur="ValRpass()" /><span id="srpass"></span> <!--R-Pass-->
+                    </div>
+                    <div class="form-password-contains">
+                        <p>
+                            <big>Ο κωδικός πρόσβασης πρέπει να περιέχει:</big>
+                        </p><br />
+                        <ul>
+                            <li>Τουλάχιστον 6 χαρακτήρες.</li>
+                            <li>Τουλάxιχτον 1 αριθμό.</li>
+                            <li>Τουλάxιχτον 1 κεφαλαίο και 1 πεζό χαρακτήρα.</li>
+                            <li>Όχι κενούς χαρακτήρες.</li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" name="submit">Εγγραφή τώρα!</button>
+                    </div>
+                    <!-- PHP CODE
+                    <?php
+                    //If  "error" letter is set in URL
+                        if(isset($_GET['error'])){
+                            $error = $_GET['error'];
+                            //If "error" letter is equal to "user_exists"
+                            if($error == "user_exists"){
+                                echo "<center class='faildMessageReg'><p><b>Υπάρχει χρήστης με αυτό το τηλέφωνο ή email!<br />Παρακαλούμε εισάγετε διαφορετικό τηλέφωνο ή email!</b></p></center>";
+                            }
+                        }//If  "error" letter is set in URL
+                        else if(isset($_GET['signup'])){
+                            $signup = $_GET['signup'];
+                            //If "signup" letter is equal to "success"
+                            if($signup == "success"){
+                                echo "<center class='successMessageReg'><p><b>Η εγγραφή σας ολοκληρώθηκε επιτυχώς!</b></p></center>";
+                            }
+                        }
+                    ?>
+                    -->
+                    <div class="form-group">
+                        <a href="login.html">Συνδεθείτε</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Empty place between footer and login form -->
+        <div id ="empty">
+        </div>
+        <!-- First footer container -->
+        <div id="footer">
+            <div id="subfooter1">
+                <h3>Ακολουθήστε μας στα κοινωνικά δίκτυα!</h3>
+            </div>
+            <!-- Second footer container -->
+            <div id="subfooter2">
+                <p class="text-container">
+                    Copyrights: Πανεπιστήμιο Δυτικής Μακεδονίας - Τμήμα Πληροφορικής &copy; <br />
+                    Πτυχιακή εργασία εφαρμογής E-food
+                </p>
+                <p class="image-container">
+                    <a href="#" ><img src="Images/facebookIcon.png" alt="Facebook Icon" /></a>
+                    <a href="#" ><img src="Images/instagramIcon.png" alt="instagram Icon" /></a>
+                    <a href="#" ><img src="Images/youtubeIcon.png" alt="Youtube Icon" /></a>
+                    <a href="#" ><img src="Images/twitterIcon.png" alt="Twitter Icon" /></a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

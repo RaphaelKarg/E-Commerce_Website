@@ -1,0 +1,104 @@
+<!-- PHP CODE
+ <?php
+    session_start();
+    if(isset($_SESSION['email'])){
+        header("Location: index.php");
+    }
+?>-->
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style1.css" />
+        <link rel="icon" type="burgerICON/png" href="Images/burgerICON.png" />
+        <script src="Javascripts/time.js">
+        </script>
+        <title>Αρχική Σελίδα</title>
+    </head>
+    <body>
+        <!--Header Menu -->
+        <div id="topHeader">
+            <img src="Images/burgerICON.png" alt="Fast Food">
+            <h2>G-food</h2>
+            <ul>
+                <li><a href="login.html">Αρχική Σελίδα</a></li>
+                <li><a href="about.html">Σχετικά με την σελίδα</a></li>
+                <li><a href="contact.html">Επικοινωνία</a></li>
+            </ul>
+            <div class="time-container">
+                <p id="DateToday"></p>
+                <p id="ShowClockToday"></p>
+            </div>
+        </div>
+        <!--Separator border -->
+        <div id="border">
+        </div>
+        <marquee scrollamount="15">
+            <h3 style="font-family: Lucida Sans Unicode">Φαγητό τώρα στο σπίτι σας, εύκολα και γρήγορα!</h3>
+        </marquee>
+        <h1>Αρχική Σελίδα</h1>
+        <!-- Login form -->
+        <div class="wrapper">
+            <div class="form-holder">
+                <img src="Images/userICON.png" alt="User Icon" class="logo" />
+                <h2>Συνδέσου τώρα!</h2>
+                <form action="index.html" method="POST" class="form"> <!-- login.inc.php -->
+                    <div class="form-group">
+                        <img src="Images/emailICON.png" alt="Email Icon" />
+                        <input type="text" name="emailOrPhone" placeholder="Email ή Τηλέφωνο" /> <!--Email Data Type: Text, Telephone Data Type: Text-->
+                    </div>
+                    <div class="form-group">
+                        <img src="Images/passwordICON.png" alt="Password Icon" />
+                        <input type="password" name="password" placeholder="Κωδικός Πρόσβασης" /><!--Password Data Type: Text-->
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" name="submit">ΣΥΝΔΕΣΗ</button>
+                    </div>
+                    <div class="form-group">
+                        <a href="findpassword.php">Ξέχασα τον κωδικό</a>
+                        <a href="register.php" class="right-link">Εγγραφή τώρα!</a>
+                    </div>
+                </form>
+                <!-- PHP CODE
+                <?php
+                    if(isset($_GET['error'])){
+                        $error = $_GET['error'];
+                        if($error == "emptyfields"){
+                            echo "<center class='error'><p><b>Παρακαλούμε συμπληρώστε όλα τα πεδία.</b></p></center>";
+                        }
+                        else if($error == "wrongpwd"){
+                            echo "<center class='error'><p><b>Λάθος κωδικός πρόσβασης.</b></p></center>";
+                        }
+                        else if($error == "noUser"){
+                            echo "<center class='error'><p><b>Tο τηλέφωνό σας ή το E-mail σας δεν αντιστοιχεί με κάποιο λογαριασμό.<br /><a href='register.php'>Εγγραφτείτε εδώ για λογαριασμό.</a></b></p></center>";
+                        }
+                    }
+                ?>
+                -->
+            </div>
+        </div>
+        <!-- Empty place between footer and login form -->
+        <div id ="empty">
+        </div>
+        <!-- First footer container -->
+        <div id="footer">
+            <div id="subfooter1">
+                <h3>Ακολουθήστε μας στα κοινωνικά δίκτυα!</h3>
+            </div>
+            <!-- Second footer container -->
+            <div id="subfooter2">
+                <p class="text-container">
+                    Copyrights: Πανεπιστήμιο Δυτικής Μακεδονίας - Τμήμα Πληροφορικής &copy; <br />
+                    Πτυχιακή εργασία εφαρμογής E-food
+                </p>
+                <p class="image-container">
+                    <a href="#" ><img src="Images/facebookIcon.png" alt="Facebook Icon" /></a>
+                    <a href="#" ><img src="Images/instagramIcon.png" alt="instagram Icon" /></a>
+                    <a href="#" ><img src="Images/youtubeIcon.png" alt="Youtube Icon" /></a>
+                    <a href="#" ><img src="Images/twitterIcon.png" alt="Twitter Icon" /></a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
